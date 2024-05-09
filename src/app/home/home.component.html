@@ -1,0 +1,30 @@
+<div class="text-center my-4">
+  <h2>Products List</h2>
+</div>
+<div class="mx-5 mb-5">
+  <table
+    class="table table-striped table-hover table-bordered border-secondary table-responsive"
+  >
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of products">
+        <th scope="row">
+          <a href="javascript:void(0)" (click)="titleClicked($event, item.id)"
+            ><span id="spnId">{{ item.id }}</span></a
+          >
+        </th>
+        <td>{{ item.title }}</td>
+        <td>{{ item.category | titlecase }}</td>
+        <td class="text-end">{{ item.price | currency : "USD" : "symbol" }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <app-overlay #overlaycontent></app-overlay>
+</div>

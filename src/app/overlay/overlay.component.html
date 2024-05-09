@@ -1,0 +1,35 @@
+<ng-template #templatePortalContent>
+  <div class="overlay-container">
+    <div class="overlay-header">
+      <button
+        type="button"
+        class="close-icon btn btn-light btn-sm"
+        (click)="close()"
+      >
+        X
+      </button>
+      <h5 class="overlay-title">{{ productDetails.title }}</h5>
+    </div>
+    <div class="d-flex flex-column">
+      <div class="row text-center">
+        <div class="col-12">
+          <img class="img-thumbnail w-25" src="{{ productDetails.image }}" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <b>Description</b>
+        </div>
+        <div class="col-9">{{ productDetails.description }}"</div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <b>Price</b>
+        </div>
+        <div class="col-9">
+          {{ productDetails.price | currency : "USD" : "symbol" }}
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
